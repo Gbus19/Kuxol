@@ -1,20 +1,163 @@
 @import "tailwindcss";
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+
+/* ===========================
+   KUXOL DESIGN SYSTEM
+=========================== */
+
+:root{
+
+    --container:1400px;
+
+    --color-primary:#d4a44a;
+    --color-bg:#071321;
+    --color-surface:#0b1624;
+    --color-text:#f8f2e9;
+    --color-text-secondary:#c7ced9;
+
+    --radius-sm:12px;
+    --radius-md:20px;
+    --radius-lg:30px;
+    --radius-pill:999px;
+
+    --space-xs:.5rem;
+    --space-sm:1rem;
+    --space-md:1.5rem;
+    --space-lg:2.5rem;
+    --space-xl:5rem;
+
 }
 
-html,
-body,
-#root{
-  width:100%;
-  height:100%;
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+    font-size:16px;
+
 }
 
 body{
-  overflow-x:hidden;
-  font-family:Inter,Arial,sans-serif;
-  background:#0B0F19;
+
+    overflow-x:hidden;
+
+    background:var(--color-bg);
+
+    color:var(--color-text);
+
+    font-family:Inter,Arial,sans-serif;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+img,
+picture,
+video,
+canvas,
+svg{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+button{
+
+    font:inherit;
+
+    cursor:pointer;
+
+}
+
+input,
+textarea,
+select{
+
+    font:inherit;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+/* ===========================
+   GLOBAL CONTAINER
+=========================== */
+
+.container{
+
+    width:min(var(--container),92%);
+
+    margin-inline:auto;
+
+}
+
+/* ===========================
+   RESPONSIVE TYPOGRAPHY
+=========================== */
+
+h1{
+
+    font-size:clamp(2.4rem,6vw,5.8rem);
+
+    line-height:1.05;
+
+}
+
+h2{
+
+    font-size:clamp(2rem,5vw,4rem);
+
+}
+
+h3{
+
+    font-size:clamp(1.4rem,3vw,2rem);
+
+}
+
+p{
+
+    font-size:clamp(1rem,1.5vw,1.35rem);
+
+    line-height:1.7;
+
+}
+
+/* ===========================
+   GLOBAL SECTION
+=========================== */
+
+section{
+
+    width:100%;
+
+    position:relative;
+
+    padding:clamp(60px,8vw,120px) 0;
+
 }

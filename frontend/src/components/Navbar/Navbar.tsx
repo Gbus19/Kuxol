@@ -1,60 +1,74 @@
+import { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/kuxol.png";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  return (
-    <header className="navbar">
 
-      <div className="navbar-container">
+    const [menuOpen, setMenuOpen] = useState(false);
 
-        <div className="logo">
+    return (
 
-  <img
-    src={logo}
-    alt="Kuxol"
-    className="kuxol-image"
-  />
+        <header className="navbar">
 
-</div>
+            <div className="container navbar-container">
 
-        <nav>
+                <div className="logo">
 
-          <a href="#">Inicio</a>
+                    <img
+                        src={logo}
+                        alt="Kuxol"
+                        className="kuxol-image"
+                    />
 
-          <a href="#">Cómo funciona</a>
+                </div>
 
-          <a href="#">Galería</a>
+                <nav className={menuOpen ? "nav active" : "nav"}>
 
-          <a href="#">Planes</a>
+                    <a href="#">Inicio</a>
 
-          <a href="#">Contacto</a>
+                    <a href="#">Cómo funciona</a>
 
-        </nav>
+                    <a href="#">Galería</a>
 
-        <div className="navbar-buttons">
+                    <a href="#">Planes</a>
 
-          <Link
-    to="/login"
-    className="login"
->
+                    <a href="#">Contacto</a>
 
-    Iniciar sesión
+                </nav>
 
-</Link>
+                <div className="navbar-buttons">
 
-          <button className="register">
+                    <Link
+                        to="/login"
+                        className="btn btn-secondary"
+                    >
+                        Iniciar sesión
+                    </Link>
 
-            Crear evento
+                    <button
+                        className="btn btn-primary"
+                    >
+                        Crear evento
+                    </button>
 
-          </button>
+                </div>
 
-        </div>
+                <button
+                    className="menu-toggle"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
 
-      </div>
+                    ☰
 
-    </header>
-  );
+                </button>
+
+            </div>
+
+        </header>
+
+    );
+
 }
 
 export default Navbar;

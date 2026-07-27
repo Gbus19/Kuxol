@@ -2,73 +2,73 @@ import "./Hero.css";
 import PhoneMockup from "../PhoneMockup/PhoneMockup";
 
 function Hero() {
-  return (
-    <section className="hero">
+    return (
+        <section className="hero">
 
-      <div className="hero-overlay"></div>
+            <div className="hero-overlay"></div>
 
-      <div className="hero-container">
+            <div className="container hero-container">
 
-        <div className="hero-left">
+                <div className="hero-left">
 
-          <span className="hero-tag">
+                    <span className="hero-tag">
 
-            EVENT MEMORIES PLATFORM
+                        EVENT MEMORIES PLATFORM
 
-          </span>
+                    </span>
 
-          <h1>
+                    <h1>
 
-            Todos los recuerdos
+                        Todos los recuerdos
 
-            <br />
+                        <br />
 
-            de tu evento,
+                        de tu evento,
 
-            <br />
+                        <br />
 
-            en un solo lugar.
+                        en un solo lugar.
 
-          </h1>
+                    </h1>
 
-          <p>
+                    <p>
 
-            Kuxol permite que todos los invitados
-            suban fotografías y videos desde su
-            celular mediante un código QR.
+                        Kuxol permite que todos los invitados
+                        suban fotografías y videos desde su
+                        celular mediante un código QR.
 
-            Todo queda organizado automáticamente.
+                        Todo queda organizado automáticamente.
 
-          </p>
+                    </p>
 
-          <div className="hero-buttons">
+                    <div className="hero-buttons">
 
-            <button className="btn-primary">
+                        <button className="btn btn-primary">
 
-              Crear evento
+                            Crear evento
 
-            </button>
+                        </button>
 
-            <button className="btn-secondary">
+                        <button className="btn btn-secondary">
 
-              Ver demostración
+                            Ver demostración
 
-            </button>
+                        </button>
 
-          </div>
+                    </div>
 
-        </div>
+                </div>
 
-        <div className="hero-right">
+                <div className="hero-right">
 
-          <PhoneMockup />
+                    <PhoneMockup />
 
-        </div>
+                </div>
 
-      </div>
+            </div>
 
-    </section>
-  );
+        </section>
+    );
 }
 
 export default Hero;

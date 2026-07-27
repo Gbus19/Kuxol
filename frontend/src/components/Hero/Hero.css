@@ -4,13 +4,11 @@
 
     width:100%;
 
-    min-height:120vh;
+    min-height:100svh;
 
-    padding-top:120px;
+    padding-block:clamp(7rem,10vw,9rem);
 
-    padding-bottom:120px;
-
-    background:#071321;
+    background:var(--color-bg);
 
     overflow:hidden;
 
@@ -27,22 +25,13 @@
     inset:0;
 
     background:
-
-    radial-gradient(circle at 80% 50%,rgba(212,164,74,.22),transparent 35%),
-
-    radial-gradient(circle at 15% 10%,rgba(28,80,130,.30),transparent 30%),
-
-    linear-gradient(180deg,#071321,#06111d);
+        radial-gradient(circle at 80% 50%,rgba(212,164,74,.22),transparent 35%),
+        radial-gradient(circle at 15% 10%,rgba(28,80,130,.30),transparent 30%),
+        linear-gradient(180deg,#071321,#06111d);
 
 }
 
 .hero-container{
-
-    width:1400px;
-
-    max-width:92%;
-
-    margin:auto;
 
     position:relative;
 
@@ -50,37 +39,41 @@
 
     display:flex;
 
+    align-items:center;
+
     justify-content:space-between;
 
-    align-items:center;
-    
+    gap:clamp(2rem,5vw,5rem);
 
 }
+
 .hero-left{
 
-    width:52%;
+    flex:1;
 
-    color:white;
+    color:var(--color-text);
 
-    animation:fadeUp 1s ease;
+    animation:fadeUp .9s ease;
 
 }
 
 .hero-tag{
 
-    display:inline-block;
+    display:inline-flex;
 
-    padding:12px 24px;
+    align-items:center;
+
+    padding:.75rem 1.5rem;
 
     border:1px solid rgba(212,164,74,.35);
 
     border-radius:999px;
 
-    color:#d4a44a;
+    color:var(--color-primary);
 
-    letter-spacing:4px;
+    letter-spacing:.25rem;
 
-    font-size:13px;
+    font-size:.8rem;
 
     backdrop-filter:blur(18px);
 
@@ -90,29 +83,29 @@
 
 .hero-left h1{
 
-    margin-top:35px;
+    margin-top:2rem;
 
-    font-size:92px;
+    font-size:clamp(2.5rem,7vw,5.8rem);
 
-    line-height:95px;
+    line-height:1.05;
 
     font-weight:800;
 
-    color:#f8f2e9;
+    color:var(--color-text);
 
 }
 
 .hero-left p{
 
-    margin-top:35px;
+    margin-top:2rem;
 
-    max-width:720px;
+    max-width:42rem;
 
-    color:#c7ced9;
+    color:var(--color-text-secondary);
 
-    font-size:24px;
+    font-size:clamp(1rem,2vw,1.4rem);
 
-    line-height:42px;
+    line-height:1.7;
 
 }
 
@@ -120,72 +113,17 @@
 
     display:flex;
 
-    gap:24px;
+    flex-wrap:wrap;
 
-    margin-top:55px;
+    gap:1.25rem;
 
-}
-
-.btn-primary{
-
-    padding:22px 42px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:#d4a44a;
-
-    color:#071321;
-
-    font-size:18px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:.35s;
+    margin-top:3rem;
 
 }
 
-.btn-primary:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:0 20px 45px rgba(212,164,74,.35);
-
-}
-
-.btn-secondary{
-
-    padding:22px 42px;
-
-    border-radius:999px;
-
-    border:1px solid rgba(212,164,74,.45);
-
-    background:transparent;
-
-    color:white;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:.35s;
-
-}
-
-.btn-secondary:hover{
-
-    background:#d4a44a;
-
-    color:#071321;
-
-}
 .hero-right{
 
-    width:48%;
+    flex:1;
 
     display:flex;
 
@@ -203,9 +141,9 @@
 
     position:absolute;
 
-    width:650px;
+    width:min(42vw,650px);
 
-    height:650px;
+    aspect-ratio:1;
 
     border-radius:50%;
 
@@ -219,9 +157,9 @@
 
     position:absolute;
 
-    width:520px;
+    width:min(34vw,520px);
 
-    height:520px;
+    aspect-ratio:1;
 
     border-radius:50%;
 
@@ -235,7 +173,7 @@
 
         opacity:0;
 
-        transform:translateY(60px);
+        transform:translateY(50px);
 
     }
 
@@ -244,6 +182,128 @@
         opacity:1;
 
         transform:translateY(0);
+
+    }
+
+}
+
+/* =======================================
+   TABLET
+======================================= */
+
+@media (max-width:992px){
+
+    .hero{
+
+        min-height:auto;
+
+    }
+
+    .hero-container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .hero-left{
+
+        width:100%;
+
+    }
+
+    .hero-right{
+
+        width:100%;
+
+        margin-top:2rem;
+
+    }
+
+    .hero-left p{
+
+        margin-inline:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+}
+
+/* =======================================
+   MOBILE
+======================================= */
+
+@media (max-width:768px){
+
+    .hero{
+
+        padding-block:7rem 4rem;
+
+    }
+
+    .hero-tag{
+
+        font-size:.7rem;
+
+        letter-spacing:.12rem;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .hero-right::before{
+
+        width:min(85vw,360px);
+
+    }
+
+    .hero-right::after{
+
+        width:min(70vw,280px);
+
+    }
+
+}
+
+/* =======================================
+   EXTRA SMALL
+======================================= */
+
+@media (max-width:480px){
+
+    .hero-left h1{
+
+        font-size:clamp(2.2rem,9vw,3rem);
+
+    }
+
+    .hero-left p{
+
+        font-size:1rem;
+
+    }
+
+    .hero-right::before{
+
+        width:min(82vw,260px);
+
+    }
+
+    .hero-right::after{
+
+        width:min(65vw,200px);
 
     }
 

@@ -2,10 +2,15 @@ import "./Login.css";
 import logo from "../../assets/kuxol.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+
 import { login } from "../../services/authService";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Login() {
+
   const navigate = useNavigate();
+
+  const { login: loginUser } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,9 +18,11 @@ export default function Login() {
   const handleLogin = async (
     e: React.FormEvent<HTMLFormElement>
   ) => {
+
     e.preventDefault();
 
     try {
+
       const result = await login({
         email,
         password,
@@ -26,34 +33,45 @@ export default function Login() {
         return;
       }
 
-      localStorage.setItem("token", result.token);
+      localStorage.setItem(
+        "token",
+        result.token
+      );
+
       localStorage.setItem(
         "refreshToken",
         result.refreshToken
       );
-      localStorage.setItem(
-        "firstName",
-        result.firstName
-      );
-      localStorage.setItem(
-        "lastName",
-        result.lastName
-      );
+
+      loginUser({
+        id: result.user.id,
+        firstName: result.user.firstName,
+        lastName: result.user.lastName,
+        email: result.user.email,
+        plan: result.user.plan,
+      });
 
       navigate("/dashboard");
+
     } catch (error: any) {
+
       alert(
         error.response?.data?.message ??
-          "Error al iniciar sesión."
+        "Error al iniciar sesión."
       );
+
     }
+
   };
 
   return (
+
     <div className="login-page">
+
       <div className="login-background"></div>
 
       <div className="login-card">
+
         <img
           src={logo}
           alt="Kuxol"
@@ -72,7 +90,9 @@ export default function Login() {
         </p>
 
         <form onSubmit={handleLogin}>
+
           <div className="input-group">
+
             <label>Correo electrónico</label>
 
             <input
@@ -84,9 +104,11 @@ export default function Login() {
               }
               required
             />
+
           </div>
 
           <div className="input-group">
+
             <label>Contraseña</label>
 
             <input
@@ -98,18 +120,25 @@ export default function Login() {
               }
               required
             />
+
           </div>
 
           <div className="login-options">
+
             <label className="remember">
+
               <input type="checkbox" />
 
               Recordarme
+
             </label>
 
             <Link to="/forgot-password">
+
               ¿Olvidaste tu contraseña?
+
             </Link>
+
           </div>
 
           <button
@@ -118,28 +147,41 @@ export default function Login() {
           >
             Iniciar sesión
           </button>
+
         </form>
 
         <div className="login-divider">
+
           <span></span>
 
           <p>o</p>
 
           <span></span>
+
         </div>
 
         <button className="google-button">
+
           Continuar con Google
+
         </button>
 
         <div className="register-link">
+
           ¿Aún no tienes cuenta?{" "}
 
           <Link to="/register">
+
             Crear una cuenta
+
           </Link>
+
         </div>
+
       </div>
+
     </div>
+
   );
+
 }

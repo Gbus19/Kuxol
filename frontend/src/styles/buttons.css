@@ -1,0 +1,103 @@
+/* =====================================
+   KUXOL BUTTONS
+===================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.75rem;
+
+    padding:1rem 2rem;
+
+    border:none;
+
+    border-radius:999px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+    text-decoration:none;
+
+}
+
+/* ---------- Primary ---------- */
+
+.btn-primary{
+
+    background:var(--color-primary);
+
+    color:#071321;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    filter:brightness(1.08);
+
+}
+
+/* ---------- Secondary ---------- */
+
+.btn-secondary{
+
+    background:transparent;
+
+    border:2px solid rgba(255,255,255,.15);
+
+    color:var(--color-text);
+
+}
+
+.btn-secondary:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* ---------- Ghost ---------- */
+
+.btn-ghost{
+
+    background:transparent;
+
+    color:var(--color-text);
+
+}
+
+.btn-ghost:hover{
+
+    background:rgba(255,255,255,.05);
+
+}
+
+/* ---------- Full Width ---------- */
+
+.btn-full{
+
+    width:100%;
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+    .btn{
+
+        width:100%;
+
+    }
+
+}
