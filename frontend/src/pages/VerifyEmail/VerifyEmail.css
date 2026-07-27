@@ -1,0 +1,178 @@
+.verify-page{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#071321;
+
+    overflow:hidden;
+
+}
+
+.verify-background{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at 20% 20%,rgba(212,164,74,.10),transparent 35%),
+    radial-gradient(circle at 80% 80%,rgba(39,122,255,.10),transparent 35%),
+    linear-gradient(180deg,#071321,#06111d);
+
+}
+
+.verify-card{
+
+    position:relative;
+
+    z-index:5;
+
+    width:600px;
+
+    padding:65px;
+
+    border-radius:32px;
+
+    text-align:center;
+
+    background:rgba(13,24,40,.82);
+
+    backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 40px 120px rgba(0,0,0,.45);
+
+}
+
+.verify-logo{
+
+    width:180px;
+
+    margin-bottom:35px;
+
+}
+
+.verify-icon{
+
+    width:95px;
+
+    height:95px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:40px;
+
+    background:#d4a44a;
+
+    color:#071321;
+
+    margin-bottom:30px;
+
+}
+
+.verify-tag{
+
+    display:block;
+
+    color:#d4a44a;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    margin-bottom:20px;
+
+}
+
+.verify-card h1{
+
+    color:white;
+
+    font-size:48px;
+
+    line-height:56px;
+
+    margin-bottom:25px;
+
+}
+
+.verify-card p{
+
+    color:#bcc8d8;
+
+    line-height:34px;
+
+    margin-bottom:45px;
+
+    font-size:18px;
+
+}
+
+.verify-button{
+
+    width:100%;
+
+    height:62px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#d4a44a;
+
+    color:#071321;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.verify-button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 20px 40px rgba(212,164,74,.35);
+
+}
+
+.verify-footer{
+
+    margin-top:35px;
+
+    color:#9fb2c6;
+
+}
+
+.verify-footer a{
+
+    color:#d4a44a;
+
+    margin-left:10px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}

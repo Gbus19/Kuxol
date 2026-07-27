@@ -1,0 +1,6 @@
+@Kuxol.Api_HostAddress = http://localhost:5245
+
+GET {{Kuxol.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

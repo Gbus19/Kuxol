@@ -1,43 +1,60 @@
 import "./Navbar.css";
+import logo from "../../assets/kuxol.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
+  return (
+    <header className="navbar">
 
-    return (
+      <div className="navbar-container">
 
-        <header className="navbar">
+        <div className="logo">
 
-            <div className="nav-container">
+  <img
+    src={logo}
+    alt="Kuxol"
+    className="kuxol-image"
+  />
 
-                <h2>
+</div>
 
-                    KUXOL
+        <nav>
 
-                </h2>
+          <a href="#">Inicio</a>
 
-                <nav>
+          <a href="#">Cómo funciona</a>
 
-                    <a href="#">Inicio</a>
+          <a href="#">Galería</a>
 
-                    <a href="#">Cómo funciona</a>
+          <a href="#">Planes</a>
 
-                    <a href="#">Planes</a>
+          <a href="#">Contacto</a>
 
-                    <a href="#">Contacto</a>
+        </nav>
 
-                </nav>
+        <div className="navbar-buttons">
 
-                <button>
+          <Link
+    to="/login"
+    className="login"
+>
 
-                    Iniciar sesión
+    Iniciar sesión
 
-                </button>
+</Link>
 
-            </div>
+          <button className="register">
 
-        </header>
+            Crear evento
 
-    );
+          </button>
 
+        </div>
+
+      </div>
+
+    </header>
+  );
 }
 
 export default Navbar;

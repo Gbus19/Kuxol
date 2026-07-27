@@ -141,3 +141,25 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# .NET
+**/bin/
+**/obj/
+
+# Publicaciones
+publish/
+
+# Rider
+.idea/
+
+# Mac / Windows
+.DS_Store
+Thumbs.db
+
+# Rider / IDE personal
+.cr/

@@ -1,0 +1,133 @@
+.activity{
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.activity-header{
+
+    margin-bottom:35px;
+
+}
+
+.activity-header small{
+
+    color:#d4a44a;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+
+}
+
+.activity-header h2{
+
+    color:white;
+
+    margin-top:12px;
+
+    font-size:32px;
+
+}
+
+.timeline{
+
+    position:relative;
+
+    padding-left:28px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:17px;
+
+    top:0;
+
+    bottom:0;
+
+    width:2px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    display:flex;
+
+    gap:22px;
+
+    margin-bottom:35px;
+
+    transition:.35s;
+
+}
+
+.timeline-item:hover{
+
+    transform:translateX(8px);
+
+}
+
+.timeline-icon{
+
+    width:36px;
+
+    height:36px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#d4a44a;
+
+    color:#071321;
+
+    z-index:2;
+
+    box-shadow:
+
+    0 0 20px rgba(212,164,74,.35);
+
+}
+
+.timeline-content{
+
+    flex:1;
+
+}
+
+.timeline-content h4{
+
+    color:white;
+
+    margin-bottom:8px;
+
+}
+
+.timeline-content span{
+
+    color:#9fb2c6;
+
+    font-size:14px;
+
+}

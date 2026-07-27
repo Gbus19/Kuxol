@@ -1,0 +1,209 @@
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+.stat-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:32px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.45s;
+
+    cursor:pointer;
+
+}
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        rgba(212,164,74,.22),
+        transparent 70%
+    );
+
+    top:-120px;
+
+    right:-120px;
+
+    opacity:0;
+
+    transition:.45s;
+
+}
+
+.stat-card:hover::before{
+
+    opacity:1;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:rgba(212,164,74,.30);
+
+    box-shadow:
+    0 35px 70px rgba(0,0,0,.35);
+
+}
+
+.stat-icon{
+
+    width:68px;
+
+    height:68px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:28px;
+
+    color:#d4a44a;
+
+    background:rgba(212,164,74,.12);
+
+    transition:.35s;
+
+}
+
+.stat-card:hover .stat-icon{
+
+    transform:rotate(-8deg) scale(1.08);
+
+}
+
+.stat-card span{
+
+    display:block;
+
+    color:#9fb2c6;
+
+    font-size:14px;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card h2{
+
+    color:white;
+
+    font-size:46px;
+
+    font-weight:800;
+
+    margin-bottom:12px;
+
+}
+
+.stat-card small{
+
+    color:#22c55e;
+
+    font-size:14px;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:8px;
+
+    margin-top:28px;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.05);
+
+}
+
+.progress-fill{
+
+    width:72%;
+
+    height:100%;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        90deg,
+        #d4a44a,
+        #f4d37b
+    );
+
+    animation:growBar 2s ease;
+
+}
+
+@keyframes growBar{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:72%;
+
+    }
+
+}
+
+@media(max-width:1500px){
+
+    .stats{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

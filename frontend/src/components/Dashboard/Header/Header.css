@@ -1,0 +1,464 @@
+.header{
+
+    display:grid;
+
+    grid-template-columns:minmax(420px,1fr) minmax(320px,520px) auto;
+
+    align-items:center;
+
+    gap:40px;
+
+    margin-bottom:50px;
+
+}
+
+
+
+
+/*==========================================
+                LEFT
+==========================================*/
+
+.header-left{
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-width:0;
+
+    overflow:visible;
+
+}
+
+.header-left small{
+
+    color:#d4a44a;
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    font-weight:700;
+
+    margin-bottom:14px;
+
+}
+
+.header-left h1{
+
+    color:white;
+
+    font-size:48px;
+
+    font-weight:800;
+
+    letter-spacing:-2px;
+
+    line-height:1.1;
+
+    white-space:normal;
+
+    overflow:visible;
+
+    word-break:break-word;
+
+}
+
+.header-left span{
+
+    margin-top:14px;
+
+    color:#8da2ba;
+
+    font-size:17px;
+
+    line-height:1.6;
+
+    max-width:650px;
+
+}
+
+
+
+
+
+/*==========================================
+            PREMIUM BADGE
+==========================================*/
+
+.header-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    width:max-content;
+
+    padding:10px 18px;
+
+    margin-bottom:20px;
+
+    border-radius:999px;
+
+    background:rgba(212,164,74,.08);
+
+    border:1px solid rgba(212,164,74,.18);
+
+    color:#d4a44a;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+.header-badge svg{
+
+    color:#d4a44a;
+
+}
+
+
+
+
+
+/*==========================================
+                SEARCH
+==========================================*/
+
+.header-center{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    height:64px;
+
+    padding:0 22px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.header-center:hover{
+
+    border-color:rgba(212,164,74,.25);
+
+}
+
+.header-center:focus-within{
+
+    border-color:#d4a44a;
+
+    box-shadow:
+
+        0 0 0 4px rgba(212,164,74,.12);
+
+}
+
+.header-center svg{
+
+    color:#d4a44a;
+
+    flex-shrink:0;
+
+}
+
+.header-center input{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+.header-center input::placeholder{
+
+    color:#8da2ba;
+
+}
+
+
+
+
+
+/*==========================================
+                RIGHT
+==========================================*/
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    gap:16px;
+
+    flex-wrap:nowrap;
+
+}
+
+
+
+
+
+/*==========================================
+            ICON BUTTONS
+==========================================*/
+
+.header-action{
+
+    position:relative;
+
+    width:58px;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:rgba(255,255,255,.05);
+
+    transition:.3s;
+
+}
+
+.header-action:hover{
+
+    transform:translateY(-3px);
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.notification-dot{
+
+    position:absolute;
+
+    top:12px;
+
+    right:12px;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#ef4444;
+
+    box-shadow:
+
+        0 0 14px #ef4444;
+
+}
+
+
+
+
+
+/*==========================================
+            NEW EVENT
+==========================================*/
+
+.new-event{
+
+    height:58px;
+
+    padding:0 24px;
+
+    border:none;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    background:#d4a44a;
+
+    color:#071321;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.new-event:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 15px 35px rgba(212,164,74,.30);
+
+}
+
+
+
+
+
+/*==========================================
+                USER
+==========================================*/
+
+.header-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:8px 18px 8px 8px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.05);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.header-user:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.user-photo{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:#d4a44a;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#071321;
+
+    font-weight:800;
+
+}
+
+.header-user h4{
+
+    color:white;
+
+    font-size:15px;
+
+    margin-bottom:4px;
+
+}
+
+.header-user small{
+
+    color:#8da2ba;
+
+    letter-spacing:0;
+
+    margin:0;
+
+    font-size:13px;
+
+}
+
+.header-user svg{
+
+    color:#8da2ba;
+
+}
+
+
+
+
+
+/*==========================================
+            RESPONSIVE
+==========================================*/
+
+@media(max-width:1500px){
+
+    .header{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .header-center{
+
+        width:100%;
+
+    }
+
+    .header-right{
+
+        justify-content:flex-end;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .header-right{
+
+        flex-wrap:wrap;
+
+        justify-content:flex-start;
+
+    }
+
+}
