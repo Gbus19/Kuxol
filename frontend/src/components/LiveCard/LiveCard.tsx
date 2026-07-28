@@ -1,39 +1,122 @@
 import "./LiveCard.css";
 
-function LiveCard() {
-  return (
-    <div className="live-card">
+import {
+    Camera,
+    Video,
+    Users,
+    Circle,
+    Calendar
+} from "lucide-react";
 
-      <div className="live-header">
-        <span className="live-status"></span>
-        <p>Event</p>
-      </div>
+type LiveCardProps = {
+    title?: string;
+    date?: string;
+    status?: string;
+    photos?: number;
+    videos?: number;
+    guests?: number;
+    onOpen?: () => void;
+};
 
-      <h2>david</h2>
+export default function LiveCard({
 
-      <div className="divider"></div>
+    title = "Boda de David & María",
+    date = "26 Octubre 2026",
+    status = "En vivo",
+    photos = 1248,
+    videos = 312,
+    guests = 186,
+    onOpen
 
-      <div className="row">
-        <span>📸 Fotos</span>
-        <strong>1,248</strong>
-      </div>
+}: LiveCardProps) {
 
-      <div className="row">
-        <span>🎥 Videos</span>
-        <strong>312</strong>
-      </div>
+    return (
 
-      <div className="row">
-        <span>👥 Invitados</span>
-        <strong>186</strong>
-      </div>
+        <div className="live-card">
 
-      <div className="divider"></div>
+            <div className="live-header">
 
-      <button>Abrir álbum</button>
+                <div className="live-state">
 
-    </div>
-  );
+                    <Circle
+                        size={10}
+                        fill="currentColor"
+                        strokeWidth={0}
+                    />
+
+                    <span>{status}</span>
+
+                </div>
+
+            </div>
+
+            <h2>{title}</h2>
+
+            <div className="live-date">
+
+                <Calendar size={18} />
+
+                <span>{date}</span>
+
+            </div>
+
+            <div className="divider"></div>
+
+            <div className="row">
+
+                <div className="row-label">
+
+                    <Camera size={18} />
+
+                    <span>Fotos</span>
+
+                </div>
+
+                <strong>{photos.toLocaleString()}</strong>
+
+            </div>
+
+            <div className="row">
+
+                <div className="row-label">
+
+                    <Video size={18} />
+
+                    <span>Videos</span>
+
+                </div>
+
+                <strong>{videos.toLocaleString()}</strong>
+
+            </div>
+
+            <div className="row">
+
+                <div className="row-label">
+
+                    <Users size={18} />
+
+                    <span>Invitados</span>
+
+                </div>
+
+                <strong>{guests.toLocaleString()}</strong>
+
+            </div>
+
+            <div className="divider"></div>
+
+            <button
+                className="btn btn-primary btn-full"
+                onClick={onOpen}
+            >
+
+                Abrir álbum
+
+            </button>
+
+        </div>
+
+    );
+
 }
-
-export default LiveCard;

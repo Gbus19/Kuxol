@@ -1,75 +1,129 @@
+/* =====================================
+   LIVE CARD
+===================================== */
+
 .live-card{
 
-    width:380px;
+    width:100%;
+    max-width:380px;
 
-    padding:35px;
+    padding:2rem;
 
-    border-radius:30px;
+    border-radius:24px;
 
-    backdrop-filter:blur(30px);
+    background:rgba(255,255,255,.06);
 
-    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
 
-    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(24px);
 
-    color:white;
+    color:var(--color-text);
 
-    box-shadow:
-    0 30px 80px rgba(0,0,0,.35);
+    box-shadow:0 25px 70px rgba(0,0,0,.30);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 
 }
+
+.live-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 35px 90px rgba(0,0,0,.35);
+
+}
+
+/* =====================================
+   HEADER
+===================================== */
 
 .live-header{
 
     display:flex;
 
+    justify-content:space-between;
+
     align-items:center;
 
-    gap:10px;
+    margin-bottom:1.2rem;
 
 }
 
-.live-status{
+.live-state{
 
-    width:10px;
+    display:flex;
 
-    height:10px;
+    align-items:center;
 
-    border-radius:50%;
+    gap:.55rem;
 
-    background:#22c55e;
+    color:#22c55e;
 
-    animation:pulse 1.6s infinite;
+    font-size:.85rem;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+.live-state svg{
+
+    animation:pulse 1.8s infinite;
 
 }
 
-.live-header p{
-
-    letter-spacing:4px;
-
-    font-size:13px;
-
-    opacity:.8;
-
-}
+/* =====================================
+   TITLE
+===================================== */
 
 .live-card h2{
 
-    margin:25px 0;
+    margin-bottom:1rem;
 
-    font-size:34px;
+    font-size:clamp(1.6rem,3vw,2rem);
+
+    line-height:1.2;
+
+    color:var(--color-text);
 
 }
+
+.live-date{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.6rem;
+
+    color:var(--color-text-secondary);
+
+    font-size:.95rem;
+
+}
+
+/* =====================================
+   DIVIDER
+===================================== */
 
 .divider{
 
     height:1px;
 
-    background:rgba(255,255,255,.12);
+    margin:1.5rem 0;
 
-    margin:18px 0;
+    background:rgba(255,255,255,.08);
 
 }
+
+/* =====================================
+   ROWS
+===================================== */
 
 .row{
 
@@ -77,65 +131,63 @@
 
     justify-content:space-between;
 
-    margin:22px 0;
+    align-items:center;
+
+    padding:.75rem 0;
+
+}
+
+.row-label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.75rem;
+
+    color:var(--color-text-secondary);
 
 }
 
 .row strong{
 
-    font-size:22px;
+    color:var(--color-text);
 
-}
-
-.live-card button{
-
-    margin-top:20px;
-
-    width:100%;
-
-    height:58px;
-
-    border:none;
-
-    border-radius:18px;
-
-    background:white;
-
-    color:#111;
-
-    font-size:17px;
+    font-size:1.1rem;
 
     font-weight:700;
 
-    cursor:pointer;
+}
 
-    transition:.3s;
+/* =====================================
+   BUTTON
+===================================== */
+
+.live-card .btn{
+
+    margin-top:1rem;
 
 }
 
-.live-card button:hover{
+/* =====================================
+   MOBILE
+===================================== */
 
-    transform:translateY(-4px);
+@media(max-width:768px){
 
-}
+    .live-card{
 
-@keyframes pulse{
+        max-width:none;
 
-    0%{
+        padding:1.5rem;
 
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.5);
+        border-radius:20px;
 
     }
 
-    100%{
+    .live-card h2{
 
-        transform:scale(1);
+        font-size:1.5rem;
 
     }
 

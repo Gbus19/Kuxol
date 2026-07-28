@@ -1,36 +1,58 @@
+/* =====================================
+   DASHBOARD
+===================================== */
+
 .dashboard{
 
     min-height:100vh;
 
-    background:#071321;
-
     display:flex;
 
+    background:var(--color-bg);
+
 }
+
+/* =====================================
+   CONTENT
+===================================== */
 
 .dashboard-content{
 
     flex:1;
 
-    margin-left:350px;
-
-    padding:40px 50px;
-
     min-width:0;
 
+    margin-left:350px;
+
+    padding:2rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
 }
+
+/* =====================================
+   GRID
+===================================== */
 
 .dashboard-grid{
 
     display:grid;
 
-    grid-template-columns:2fr 1fr;
+    grid-template-columns:minmax(0,2fr) minmax(320px,1fr);
 
-    gap:30px;
+    gap:2rem;
 
-    margin-top:30px;
+    align-items:start;
 
 }
+
+/* =====================================
+   LARGE TABLETS
+===================================== */
 
 @media(max-width:1500px){
 
@@ -42,13 +64,33 @@
 
 }
 
+/* =====================================
+   TABLETS
+===================================== */
+
 @media(max-width:1200px){
 
     .dashboard-content{
 
         margin-left:0;
 
-        padding:25px;
+        padding:1.5rem;
+
+    }
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+    .dashboard-content{
+
+        padding:1rem;
+
+        gap:1.5rem;
 
     }
 

@@ -1,133 +1,104 @@
 import "./Features.css";
+
 import gallery from "../../assets/images/home/gallery.jpg";
 import qr from "../../assets/images/home/qr.png";
 import album from "../../assets/images/home/album.jpg";
 
-export default function Features() {
-  return (
-    <section className="features">
-
-      <div className="features-header">
-
-        <span>
-          KUXOL EXPERIENCE
-        </span>
-
-        <h2>
-
-          Todo sucede de forma
-          <br />
-          automática.
-
-        </h2>
-
-        <p>
-
-          Desde el acceso al evento mediante un código QR o enlace privado hasta el almacenamiento automático de cada fotografía y video, 
-          Kuxol hace que compartir recuerdos sea una experiencia simple, rápida y segura.
-
-        </p>
-
-      </div>
-
-      <div className="timeline">
-
-        <div className="step">
-
-          <div className="step-text">
-
-            <small>01</small>
-
-            <h3>
-               Un acceso para
-               <br />
+const features = [
+    {
+        id: "01",
+        title: (
+            <>
+                Un acceso para
+                <br />
                 todos
-            </h3>
+            </>
+        ),
+        description:
+            "Comparte un código QR o un enlace privado con tus invitados. Cada persona podrá acceder fácilmente desde su celular para capturar y subir recuerdos del evento en tiempo real, sin registros complicados ni aplicaciones adicionales.",
+        image: qr,
+        alt: "Acceso mediante código QR",
+    },
+    {
+        id: "02",
+        title: "Fotos y videos ilimitados",
+        description:
+            "Todos pueden subir fotografías y videos al instante sin instalar ninguna aplicación.",
+        image: gallery,
+        alt: "Galería Kuxol",
+        reverse: true,
+    },
+    {
+        id: "03",
+        title: "Álbum privado",
+        description:
+            "Todo queda organizado automáticamente en un solo lugar.",
+        image: album,
+        alt: "Álbum del evento",
+    },
+];
 
-            <p>
+export default function Features() {
+    return (
+        <section className="features section">
 
-              Comparte un código QR o un enlace privado con tus invitados.
-              Cada persona podrá acceder fácilmente desde su celular para
-              capturar y subir recuerdos del evento en tiempo real, sin
-              registros complicados ni aplicaciones adicionales.
+            <div className="container">
 
-            </p>
+                <header className="features-header">
 
-          </div>
+                    <span>KUXOL EXPERIENCE</span>
 
-          <div className="step-image">
+                    <h2>
+                        Todo sucede de forma
+                        <br />
+                        automática.
+                    </h2>
 
-    <img
-        src={qr}
-        alt="Acceso mediante código QR"
-    />
+                    <p>
+                        Desde el acceso al evento mediante un código QR o enlace
+                        privado hasta el almacenamiento automático de cada fotografía
+                        y video, Kuxol hace que compartir recuerdos sea una experiencia
+                        simple, rápida y segura.
+                    </p>
 
-</div>
+                </header>
 
-        </div>
+                <div className="timeline">
 
-        <div className="step reverse">
+                    {features.map((feature) => (
 
-          <div className="step-image">
+                        <article
+                            key={feature.id}
+                            className={`step ${feature.reverse ? "reverse" : ""}`}
+                        >
 
-    <img
-        src={gallery}
-        alt="Galería Kuxol"
-    />
+                            <div className="step-text">
 
-</div>
+                                <small>{feature.id}</small>
 
-          <div className="step-text">
+                                <h3>{feature.title}</h3>
 
-            <small>02</small>
+                                <p>{feature.description}</p>
 
-            <h3>
-              Fotos y videos ilimitados
-            </h3>
+                            </div>
 
-            <p>
+                            <div className="step-image">
 
-              Todos pueden subir fotografías y videos
-              al instante sin instalar ninguna aplicación.
+                                <img
+                                    src={feature.image}
+                                    alt={feature.alt}
+                                />
 
-            </p>
+                            </div>
 
-          </div>
+                        </article>
 
-        </div>
+                    ))}
 
-        <div className="step">
+                </div>
 
-          <div className="step-text">
+            </div>
 
-            <small>03</small>
-
-            <h3>
-              Álbum privado
-            </h3>
-
-            <p>
-
-              Todo queda organizado automáticamente
-              en un solo lugar.
-
-            </p>
-
-          </div>
-
-          <div className="step-image">
-
-    <img
-        src={album}
-        alt="Álbum del evento"
-    />
-
-</div>
-
-        </div>
-
-      </div>
-
-    </section>
-  );
+        </section>
+    );
 }

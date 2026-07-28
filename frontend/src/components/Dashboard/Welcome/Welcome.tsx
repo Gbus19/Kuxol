@@ -1,5 +1,4 @@
 import "./Welcome.css";
-
 import { useAuth } from "../../../context/AuthContext";
 
 function formatName(name: string) {
@@ -31,52 +30,48 @@ export default function Welcome() {
 
             <div className="welcome-background"></div>
 
-            <div className="welcome-content">
+            <div className="container">
 
-                <div className="welcome-left">
+                <div className="welcome-content">
 
-                    
+                    <div className="welcome-left">
 
-                    <h2>
+                        <span className="welcome-badge">
+                            PANEL DE CONTROL
+                        </span>
 
-                       Bienvenido, {firstName}
+                        <h2>
+                            Bienvenido, {firstName}
+                        </h2>
 
-                    </h2>
+                        <p>
+                            Administra cada uno de tus eventos desde una sola
+                            plataforma. Gestiona invitados, códigos QR,
+                            fotografías, videos y todo el contenido compartido
+                            por tus asistentes.
+                        </p>
 
-                    <p>
+                        <div className="welcome-buttons">
 
-                        Administra cada uno de tus eventos desde una sola plataforma.
-                        Gestiona invitados, códigos QR, fotografías, videos y el
-                        contenido compartido por tus asistentes con una experiencia
-                        rápida, organizada y segura.
-
-                    </p>
-
-                    <div className="welcome-buttons">
-
-                        <button className="primary-btn">
-
-                            Crear evento
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-                {
-
-                    nextEvent && (
-
-                        <div className="welcome-right">
-
-                            {/* Próximo evento */}
+                            <button className="btn btn-primary">
+                                Crear evento
+                            </button>
 
                         </div>
 
-                    )
+                    </div>
 
-                }
+                    {nextEvent && (
+
+                        <aside className="welcome-right">
+
+                            {/* Próximo evento */}
+
+                        </aside>
+
+                    )}
+
+                </div>
 
             </div>
 

@@ -1,25 +1,28 @@
 @import "tailwindcss";
 
-
-/* ===========================
+/* =====================================
    KUXOL DESIGN SYSTEM
-=========================== */
+===================================== */
 
 :root{
 
-    --container:1400px;
+    /* Layout */
+    --container:1240px;
 
+    /* Colors */
     --color-primary:#d4a44a;
     --color-bg:#071321;
     --color-surface:#0b1624;
     --color-text:#f8f2e9;
     --color-text-secondary:#c7ced9;
 
+    /* Radius */
     --radius-sm:12px;
     --radius-md:20px;
     --radius-lg:30px;
     --radius-pill:999px;
 
+    /* Spacing */
     --space-xs:.5rem;
     --space-sm:1rem;
     --space-md:1.5rem;
@@ -27,6 +30,10 @@
     --space-xl:5rem;
 
 }
+
+/* =====================================
+   RESET
+===================================== */
 
 *,
 *::before,
@@ -41,7 +48,6 @@
 html{
 
     scroll-behavior:smooth;
-
     font-size:16px;
 
 }
@@ -51,13 +57,11 @@ body{
     overflow-x:hidden;
 
     background:var(--color-bg);
-
     color:var(--color-text);
 
     font-family:Inter,Arial,sans-serif;
 
     text-rendering:optimizeLegibility;
-
     -webkit-font-smoothing:antialiased;
 
 }
@@ -69,16 +73,17 @@ canvas,
 svg{
 
     display:block;
-
     max-width:100%;
+    height:auto;
 
 }
 
 button{
 
     font:inherit;
-
     cursor:pointer;
+    border:none;
+    background:none;
 
 }
 
@@ -93,7 +98,6 @@ select{
 a{
 
     color:inherit;
-
     text-decoration:none;
 
 }
@@ -104,60 +108,50 @@ ul{
 
 }
 
-/* ===========================
-   GLOBAL CONTAINER
-=========================== */
-
-.container{
-
-    width:min(var(--container),92%);
-
-    margin-inline:auto;
-
-}
-
-/* ===========================
-   RESPONSIVE TYPOGRAPHY
-=========================== */
+/* =====================================
+   TYPOGRAPHY
+===================================== */
 
 h1{
 
-    font-size:clamp(2.4rem,6vw,5.8rem);
-
+    font-size:clamp(2.7rem,5vw,4.8rem);
     line-height:1.05;
+    font-weight:800;
 
 }
 
 h2{
 
-    font-size:clamp(2rem,5vw,4rem);
+    font-size:clamp(2rem,4vw,3.4rem);
+    line-height:1.15;
+    font-weight:800;
 
 }
 
 h3{
 
-    font-size:clamp(1.4rem,3vw,2rem);
+    font-size:clamp(1.35rem,3vw,1.9rem);
+    line-height:1.25;
+    font-weight:700;
 
 }
 
 p{
 
-    font-size:clamp(1rem,1.5vw,1.35rem);
-
-    line-height:1.7;
+    font-size:clamp(1rem,1.2vw,1.15rem);
+    line-height:1.75;
+    color:var(--color-text-secondary);
 
 }
 
-/* ===========================
-   GLOBAL SECTION
-=========================== */
+/* =====================================
+   GLOBAL SECTIONS
+===================================== */
 
 section{
 
     width:100%;
-
     position:relative;
-
-    padding:clamp(60px,8vw,120px) 0;
+    padding:clamp(70px,7vw,95px) 0;
 
 }

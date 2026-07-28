@@ -18,47 +18,60 @@ function PhoneMockup() {
 
                 <div className="phone-notch"></div>
 
-                <div className="phone-logo">
-                    KUXOL
-                </div>
+                <header className="phone-header">
 
-                <h2>
-                    Ana & Carlos
-                </h2>
+                    <div className="phone-logo">
+                        KUXOL
+                    </div>
 
-                <span className="phone-date">
-                    {eventDate}
-                </span>
+                    <h2>
+                        Ana & Carlos
+                    </h2>
 
-                <div className="phone-stats">
+                    <span className="phone-date">
+                        {eventDate}
+                    </span>
 
-                    <div>
-                        <strong>1248</strong>
+                </header>
+
+                <section className="phone-stats">
+
+                    <div className="phone-stat">
+
+                        <strong>1,248</strong>
+
                         <small>Fotos</small>
+
                     </div>
 
-                    <div>
+                    <div className="phone-stat">
+
                         <strong>312</strong>
+
                         <small>Videos</small>
+
                     </div>
 
-                    <div>
+                    <div className="phone-stat">
+
                         <strong>186</strong>
+
                         <small>Invitados</small>
+
                     </div>
 
-                </div>
+                </section>
 
-                <div className="phone-gallery">
+                <section className="phone-gallery">
 
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div className="gallery-item"></div>
+                    <div className="gallery-item"></div>
+                    <div className="gallery-item"></div>
+                    <div className="gallery-item"></div>
+                    <div className="gallery-item"></div>
+                    <div className="gallery-item"></div>
 
-                </div>
+                </section>
 
             </div>
 
